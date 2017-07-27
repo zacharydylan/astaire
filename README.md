@@ -3,5 +3,5 @@ macros for Javascript and React.
 
 
 TODO:  
-	*Figure out a good way to impliment custom tap functions.    
-  	*Add as many useful macros as possible.
+	-Figure out a good way to impliment custom tap functions.    
+  	-Add as many useful macros as possible.

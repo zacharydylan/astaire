@@ -22,6 +22,7 @@ enum {
 	TD_A,
 	TD_SAVE,
 	TD_PRNT,
+	TD_ONE,
 };
 
 
@@ -44,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------'
    */
 	KEYMAP(
-        TD(TD_UNDO),KC_1,KC_2,KC_3,KC_4,KC_5,KC_6,KC_7,KC_8,KC_9,KC_0,TD(TD_UND),TD(TD_PLUS),KC_BSPC, \
+        TD(TD_UNDO),TD(TD_ONE),KC_2,KC_3,KC_4,KC_5,KC_6,KC_7,KC_8,KC_9,KC_0,TD(TD_UND),TD(TD_PLUS),KC_BSPC, \
 	KC_TAB,KC_Q,KC_W,KC_E,KC_R,KC_T,KC_Y,KC_U,KC_I,KC_O,KC_P,TD(TD_BRO),TD(TD_BRC),TD(TD_BSL), \
-        LT(2, KC_CAPS),KC_A,KC_S,KC_D,KC_F,KC_G,KC_H,KC_J,KC_K,KC_L,TD(TD_SEMI),TD(TD_QUOT),KC_NO,KC_ENTER,  \
+        LT(2, KC_CAPS),TD(TD_A),KC_S,KC_D,KC_F,KC_G,KC_H,KC_J,KC_K,KC_L,TD(TD_SEMI),TD(TD_QUOT),KC_NO,KC_ENTER,  \
         KC_LSPO,KC_NO,KC_Z,KC_X,KC_C,KC_V,KC_B,KC_N,KC_M,TD(TD_LESS),TD(TD_GRT),TD(TD_Q),KC_NO,KC_RSPC, \
         TD(TD_SAVE),TD(TD_PS),KC_LALT,        KC_SPC,      KC_NO,TD(TD_COPY),MO(1),TD(TD_PRNT),TD(TD_PASTE)),
    /*
@@ -93,20 +94,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
+void exclaim(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_1);
+			unregister_code(KC_1);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_1);
+			unregister_code(KC_1);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F1);
+			unregister_code(KC_F1);
+	}
+	reset_tap_dance(state);
+};
+
+
 void grave(qk_tap_dance_state_t *state, void *user_data) {
 
   	switch (state->count) {
   		case 1:
     		register_code(KC_ESC);
+			unregister_code(KC_ESC);
     		break;
   		case 2:
     		register_code(KC_GRAVE);
+			unregister_code(KC_GRAVE);
    			break;
   		case 3:
     		register_code(KC_LSFT);
 			register_code(KC_GRAVE);
+			unregister_code(KC_GRAVE);
 			unregister_code(KC_LSFT);
 	}
+	reset_tap_dance(state);
 };
 
 void caps_a(qk_tap_dance_state_t *state, void *user_data) {
@@ -114,17 +140,21 @@ void caps_a(qk_tap_dance_state_t *state, void *user_data) {
   	switch (state->count) {
   		case 1:
     		register_code(KC_A);
+			unregister_code(KC_A);
     		break;
   		case 2:
     		register_code(KC_A);
+			unregister_code(KC_A);
 			register_code(KC_A);
+			unregister_code(KC_A);
    			break;
-  		case 3:
+  		default:
     		register_code(KC_LSFT);
 			register_code(KC_A);
+			unregister_code(KC_A);
 			unregister_code(KC_LSFT);
-			break;
 	}
+	reset_tap_dance(state);
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
@@ -133,7 +163,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 	[TD_PASTE] = ACTION_TAP_DANCE_DOUBLE(LCTL(KC_V), KC_RCTL),//    single tap right control to paste
 	[TD_UNDO] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, LCTL(KC_Z)),//      double tap ESCAPE to undo
 	[TD_PS] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, LALT(KC_PSCR)),//    double tap GUI or OS key to alt(printscreen)
-	[TD_TILD] = ACTION_TAP_DANCE_DOUBLE(KC_GRAVE, LSFT(KC_GRAVE)),//trying to single esc double grave triple tilde, not going great
+	[TD_TILD] = ACTION_TAP_DANCE_FN(grave),//trying to single esc double grave triple tilde, not going great
 	[TD_LESS] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, LSFT(KC_COMM)),//  double tap less than
 	[TD_GRT] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, LSFT(KC_DOT)),//     double tap greater than
 	[TD_Q] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH, LSFT(KC_SLSH)),//     double tap question mark
@@ -144,9 +174,10 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 	[TD_BSL] = ACTION_TAP_DANCE_DOUBLE(KC_BSLS, LSFT(KC_BSLS)),//   double tap for pipe
 	[TD_UND] = ACTION_TAP_DANCE_DOUBLE(KC_MINS, LSFT(KC_MINS)),//   double tap underscore
 	[TD_PLUS] = ACTION_TAP_DANCE_DOUBLE(KC_EQL, LSFT(KC_EQL)),//    double tap plus
-	[TD_A] = ACTION_TAP_DANCE_FN(caps_a),//                         messing around with capitalization
+	[TD_A] = ACTION_TAP_DANCE_FN(caps_a),//                         messing around with capitalization probably not that beneficial honestly, would probably work better with number keys
 	[TD_SAVE] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, LCTL(KC_S)),//     double tap left control to save
 	[TD_PRNT] = ACTION_TAP_DANCE_DOUBLE(KC_APP, LCTL(KC_P)),//      double tap menu to print
+	[TD_ONE] = ACTION_TAP_DANCE_FN(exclaim),//                      one tap is 1, two taps is exclemation point, three is F1.
 };
 
 
@@ -158,12 +189,12 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 				//"console.log()" cursor in parentheses.
 	    	case 1:
 				return MACRO(T(C),T(L),T(A),T(S),T(S),T(SPC),D(LSFT),T(T),T(O),T(D),T(O),T(SCLN),U(LSFT),T(N),T(A),T(M),T(E),T(SPC),T(SPC),T(E),T(X),T(T),T(E),\
-				T(N),T(D),T(S),T(SPC),D(LSFT),T(R),U(LSFT),T(E),T(A),T(C),T(T),T(DOT),D(LSFT),T(C),U(LSFT),T(O),T(M),T(P),T(O),T(N),T(E),T(N),T(T),END);
-				//"class TODO:name extends React.Component"
+				T(N),T(D),T(S),T(SPC),D(LSFT),T(R),U(LSFT),T(E),T(A),T(C),T(T),T(DOT),D(LSFT),T(C),U(LSFT),T(O),T(M),T(P),T(O),T(N),T(E),T(N),T(T),T(ENTER),END);
+				//"class TODO:name extends React.Component" I was practicing, otherwise this would just be a string, as such, it will take you to the next line.
 			case 2:
 				return MACRO(T(F),T(U),T(N),T(C),T(T),T(I),T(O),T(N),T(SPC),D(LSFT),T(T),T(O),T(D),T(O),T(SCLN),U(LSFT),T(N),T(A),T(M),T(E),T(SPC),D(LSFT),T(9),\
-				U(LSFT),T(P),T(R),T(O),T(P),T(S),D(LSFT),T(0),U(LSFT),END);
-				//"function TODO:name (props)"
+				U(LSFT),T(P),T(R),T(O),T(P),T(S),D(LSFT),T(0),U(LSFT),T(ENTER),END);
+				//"function TODO:name (props)"  I was practicing, otherwise this would be a string, as such, it will take you to the next line.
 			case 3:
 				SEND_STRING("constructor(props)");
 				return false;

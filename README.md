@@ -1,4 +1,4 @@
-# Astair
+# Astaire
 
 
 This is a work in progress.  This is a keymap for the [gh60](http://blog.komar.be/projects/gh60-programmable-keyboard/) keyboard that is meant to both: 

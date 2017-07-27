@@ -9,7 +9,7 @@ macros for Javascript and React
 
 This keymap does not:
   1. Provide a bunch of fancy lighting fucntions
-  2. Provide any lighting functions as well
+  2. Provide any lighting functions at all
 
 
 TODO:  

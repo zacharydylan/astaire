@@ -35,9 +35,6 @@ enum {
 };
 
 
-
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    /*
    *  Base layer, pretty standard ANSI layout.  Tap dance keys defined below.
@@ -455,6 +452,7 @@ void caps_a(qk_tap_dance_state_t *state, void *user_data) {
 	}
 	reset_tap_dance(state);
 };
+
 
 qk_tap_dance_action_t tap_dance_actions[] = {
 	[TD_ESC_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),//    not currently used

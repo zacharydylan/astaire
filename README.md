@@ -37,6 +37,7 @@ TODO:
   - Add quad taps to top row for double characters or numbers
   - Add triple taps to common double characters used in Bash and for notes in coding
   - Find clever places to put characters denoting notes in coding languages
+  - Learn C to implement DRY techniques to building repeating functions
 
 
 TOnotDO:

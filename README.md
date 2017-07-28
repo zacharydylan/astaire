@@ -14,7 +14,7 @@ This keymap does not:
   2. Provide any lighting functions at all
 
 
-##Current features:
+## Current features:
   - [Space Cadet](https://docs.qmk.fm/space_cadet_shift.html) included
   - Single tap right Alt to copy, acts normal when held
   - Single tap right Ctrl to paste, normal when held

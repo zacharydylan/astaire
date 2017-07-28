@@ -2,7 +2,7 @@
 
 
 This is a work in progress.  This is a keymap for the [gh60](http://blog.komar.be/projects/gh60-programmable-keyboard/) keyboard that is meant to both: 
-  1. use the [tap-dance](https://docs.qmk.fm/tap_dance.html) function provided by qmk extensively :statue_of_libery:
+  1. use the [tap-dance](https://docs.qmk.fm/tap_dance.html) function provided by qmk extensively :statue_of_liberty:
   2. and provide a lot of macros for Javascript and React :neckbeard:
 
 

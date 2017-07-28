@@ -16,8 +16,8 @@ This keymap does not:
 
 ## Current features:
   - [Space Cadet](https://docs.qmk.fm/space_cadet_shift.html) included
-  - Single tap right Alt to copy, acts normal when held
-  - Single tap right Ctrl to paste, normal when held
+  - Single tap right Alt to copy, acts normal when held :feelsgood:
+  - Single tap right Ctrl to paste, normal when held :feelsgood:
   - Double tap left Ctrl to save
   - Double tap left OS to Alt+Prtscrn
   - Double tap menu to print (I don't use this so you can let me know if it is useless)
@@ -25,7 +25,7 @@ This keymap does not:
   - CAPS is normal when tapped, goes to a MACRO layer when held
   - In the main function layer, escape is triple tap ESC_GRAVE_TILD
   - Symbols outside of top row are double tap, e.g. Double tap semicolon to get a colon
-  - top row is triple tap NUMBER_SYMBOL_FUNCTION-KEY
+  - top row is triple tap NUMBER_SYMBOL_FUNCTION-KEY :boom:
 
 
 TODO:  
@@ -37,7 +37,7 @@ TODO:
 
 
 TOnotDO:
-  - Add a bunch of fancy lighting functions
+  - Add a bunch of fancy lighting functions :rage4:
 
 
 TODONE:

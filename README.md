@@ -26,6 +26,9 @@ This keymap does not:
   - In the main function layer, escape is triple tap ESC_GRAVE_TILD
   - Symbols outside of top row are double tap, e.g. Double tap semicolon to get a colon
   - top row is triple tap NUMBER_SYMBOL_FUNCTION-KEY :boom:
+  - minus can be tapped a fourth time for a double minus
+  - Dot and slash can be tapped a third time for double characters
+  - EXPERIMENTAL: single tap a for normal operation, double tap for double characters and triple tap for a capital letter
 
 
 TODO:  

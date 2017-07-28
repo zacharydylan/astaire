@@ -266,6 +266,12 @@ void asterisk(qk_tap_dance_state_t *state, void *user_data) {
   		case 3: 		
 			register_code(KC_F8);
 			unregister_code(KC_F8);
+			break;
+		case 4:
+			register_code(KC_8);
+			unregister_code(KC_8);
+			register_code(KC_8);
+			unregister_code(KC_8);
 	}
 	reset_tap_dance(state);
 };
@@ -381,6 +387,53 @@ void grave(qk_tap_dance_state_t *state, void *user_data) {
 	reset_tap_dance(state);
 };
 
+
+void slash(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_SLSH);
+			unregister_code(KC_SLSH);
+    		break;
+  		case 2:
+			register_code(KC_LSFT);
+			register_code(KC_SLSH);
+			unregister_code(KC_SLSH);
+			unregister_code(KC_LSFT);    		
+   			break;
+  		case 3:
+    		register_code(KC_SLSH);
+			unregister_code(KC_SLSH);
+			register_code(KC_SLSH);
+			unregister_code(KC_SLSH);
+	}
+	reset_tap_dance(state);
+};
+
+
+void dotdot(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_DOT);
+			unregister_code(KC_DOT);
+    		break;
+  		case 2:
+			register_code(KC_LSFT);
+			register_code(KC_DOT);
+			unregister_code(KC_DOT);
+			unregister_code(KC_LSFT);    		
+   			break;
+  		case 3:
+    		register_code(KC_DOT);
+			unregister_code(KC_DOT);
+			register_code(KC_DOT);
+			unregister_code(KC_DOT);
+	}
+	reset_tap_dance(state);
+};
+
+
 void caps_a(qk_tap_dance_state_t *state, void *user_data) {
 
   	switch (state->count) {
@@ -411,8 +464,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 	[TD_PS] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, LALT(KC_PSCR)),//    double tap GUI or OS key to alt(printscreen)
 	[TD_TILD] = ACTION_TAP_DANCE_FN(grave),//                       trying to single esc double grave triple tilde, not going great
 	[TD_LESS] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, LSFT(KC_COMM)),//  double tap less than
-	[TD_GRT] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, LSFT(KC_DOT)),//     double tap greater than
-	[TD_Q] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH, LSFT(KC_SLSH)),//     double tap question mark
+	[TD_GRT] = ACTION_TAP_DANCE_FN(dotdot),//     double tap greater than
+	[TD_Q] = ACTION_TAP_DANCE_FN(slash),//                          double tap question mark
 	[TD_SEMI] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, LSFT(KC_SCLN)),//  double tap colon
 	[TD_QUOT] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, LSFT(KC_QUOT)),//  double tap double quotes
 	[TD_BRO] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, LSFT(KC_LBRC)),//   double tap left bracket

@@ -14,9 +14,26 @@ This keymap does not:
   2. Provide any lighting functions at all
 
 
+##Current features:
+  - [Space Cadet](https://docs.qmk.fm/space_cadet_shift.html) included
+  - Single tap right Alt to copy, acts normal when held
+  - Single tap right Ctrl to paste, normal when held
+  - Double tap left Ctrl to save
+  - Double tap left OS to Alt+Prtscrn
+  - Double tap menu to print (I don't use this so you can let me know if it is useless)
+  - Double tap escape to undo
+  - CAPS is normal when tapped, goes to a MACRO layer when held
+  - In the main function layer, escape is triple tap ESC_GRAVE_TILD
+  - Symbols outside of top row are double tap, e.g. Double tap semicolon to get a colon
+  - top row is triple tap NUMBER_SYMBOL_FUNCTION-KEY
+
+
 TODO:  
   - Continue improving functions as possible   
   - Add as many useful macros as possible
+  - Add quad taps to top row for double characters or numbers
+  - Add triple taps to common double characters used in Bash and for notes in coding
+  - Find clever places to put characters denoting notes in coding languages
 
 
 TOnotDO:

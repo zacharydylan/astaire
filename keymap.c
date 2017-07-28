@@ -23,6 +23,15 @@ enum {
 	TD_SAVE,
 	TD_PRNT,
 	TD_ONE,
+	TD_TWO,
+	TD_THREE,
+	TD_FOUR,
+	TD_FIVE,
+	TD_SIX,
+	TD_SEV,
+	TD_EGHT,
+	TD_NINE,
+	TD_ZERO,
 };
 
 
@@ -45,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------'
    */
 	KEYMAP(
-        TD(TD_UNDO),TD(TD_ONE),KC_2,KC_3,KC_4,KC_5,KC_6,KC_7,KC_8,KC_9,KC_0,TD(TD_UND),TD(TD_PLUS),KC_BSPC, \
+        TD(TD_UNDO),TD(TD_ONE),TD(TD_TWO),TD(TD_THREE),TD(TD_FOUR),TD(TD_FIVE),TD(TD_SIX),TD(TD_SEV),TD(TD_EGHT),TD(TD_NINE),TD(TD_ZERO),TD(TD_UND),TD(TD_PLUS),KC_BSPC, \
 	KC_TAB,KC_Q,KC_W,KC_E,KC_R,KC_T,KC_Y,KC_U,KC_I,KC_O,KC_P,TD(TD_BRO),TD(TD_BRC),TD(TD_BSL), \
         LT(2, KC_CAPS),TD(TD_A),KC_S,KC_D,KC_F,KC_G,KC_H,KC_J,KC_K,KC_L,TD(TD_SEMI),TD(TD_QUOT),KC_NO,KC_ENTER,  \
         KC_LSPO,KC_NO,KC_Z,KC_X,KC_C,KC_V,KC_B,KC_N,KC_M,TD(TD_LESS),TD(TD_GRT),TD(TD_Q),KC_NO,KC_RSPC, \
@@ -115,6 +124,243 @@ void exclaim(qk_tap_dance_state_t *state, void *user_data) {
 };
 
 
+void tweet(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_2);
+			unregister_code(KC_2);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_2);
+			unregister_code(KC_2);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F2);
+			unregister_code(KC_F2);
+	}
+	reset_tap_dance(state);
+};
+
+
+void hashtag(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_3);
+			unregister_code(KC_3);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_3);
+			unregister_code(KC_3);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F3);
+			unregister_code(KC_F3);
+	}
+	reset_tap_dance(state);
+};
+
+
+void money(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_4);
+			unregister_code(KC_4);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_4);
+			unregister_code(KC_4);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F4);
+			unregister_code(KC_F4);
+	}
+	reset_tap_dance(state);
+};
+
+
+void percent(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_5);
+			unregister_code(KC_5);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_5);
+			unregister_code(KC_5);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F5);
+			unregister_code(KC_F5);
+	}
+	reset_tap_dance(state);
+};
+
+
+void exponent(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_6);
+			unregister_code(KC_6);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_6);
+			unregister_code(KC_6);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F6);
+			unregister_code(KC_F6);
+	}
+	reset_tap_dance(state);
+};
+
+
+void ampersand(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_7);
+			unregister_code(KC_7);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_7);
+			unregister_code(KC_7);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F7);
+			unregister_code(KC_F7);
+	}
+	reset_tap_dance(state);
+};
+
+
+void asterisk(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_8);
+			unregister_code(KC_8);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_8);
+			unregister_code(KC_8);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F8);
+			unregister_code(KC_F8);
+	}
+	reset_tap_dance(state);
+};
+
+
+void parento(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_9);
+			unregister_code(KC_9);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_9);
+			unregister_code(KC_9);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F9);
+			unregister_code(KC_F9);
+	}
+	reset_tap_dance(state);
+};
+
+
+void parentc(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_0);
+			unregister_code(KC_0);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_0);
+			unregister_code(KC_0);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F10);
+			unregister_code(KC_F10);
+	}
+	reset_tap_dance(state);
+};
+
+
+void under(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_MINS);
+			unregister_code(KC_MINS);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_MINS);
+			unregister_code(KC_MINS);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F11);
+			unregister_code(KC_F11);
+			break;
+		case 4:
+			register_code(KC_MINS);
+			unregister_code(KC_MINS);
+			register_code(KC_MINS);
+			unregister_code(KC_MINS);
+	}
+	reset_tap_dance(state);
+};
+
+
+void pluskey(qk_tap_dance_state_t *state, void *user_data) {
+
+  	switch (state->count) {
+  		case 1:
+    		register_code(KC_EQL);
+			unregister_code(KC_EQL);
+    		break;
+  		case 2:
+    		register_code(KC_LSFT);
+			register_code(KC_EQL);
+			unregister_code(KC_EQL);
+			unregister_code(KC_LSFT);
+   			break;
+  		case 3: 		
+			register_code(KC_F12);
+			unregister_code(KC_F12);
+	}
+	reset_tap_dance(state);
+};
+
+
 void grave(qk_tap_dance_state_t *state, void *user_data) {
 
   	switch (state->count) {
@@ -163,7 +409,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 	[TD_PASTE] = ACTION_TAP_DANCE_DOUBLE(LCTL(KC_V), KC_RCTL),//    single tap right control to paste
 	[TD_UNDO] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, LCTL(KC_Z)),//      double tap ESCAPE to undo
 	[TD_PS] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, LALT(KC_PSCR)),//    double tap GUI or OS key to alt(printscreen)
-	[TD_TILD] = ACTION_TAP_DANCE_FN(grave),//trying to single esc double grave triple tilde, not going great
+	[TD_TILD] = ACTION_TAP_DANCE_FN(grave),//                       trying to single esc double grave triple tilde, not going great
 	[TD_LESS] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, LSFT(KC_COMM)),//  double tap less than
 	[TD_GRT] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, LSFT(KC_DOT)),//     double tap greater than
 	[TD_Q] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH, LSFT(KC_SLSH)),//     double tap question mark
@@ -172,12 +418,21 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 	[TD_BRO] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, LSFT(KC_LBRC)),//   double tap left bracket
 	[TD_BRC] = ACTION_TAP_DANCE_DOUBLE(KC_RBRC, LSFT(KC_RBRC)),//   double tap right bracket
 	[TD_BSL] = ACTION_TAP_DANCE_DOUBLE(KC_BSLS, LSFT(KC_BSLS)),//   double tap for pipe
-	[TD_UND] = ACTION_TAP_DANCE_DOUBLE(KC_MINS, LSFT(KC_MINS)),//   double tap underscore
-	[TD_PLUS] = ACTION_TAP_DANCE_DOUBLE(KC_EQL, LSFT(KC_EQL)),//    double tap plus
+	[TD_UND] = ACTION_TAP_DANCE_FN(under),//                        double tap underscore
+	[TD_PLUS] = ACTION_TAP_DANCE_FN(pluskey),//                     double tap plus
 	[TD_A] = ACTION_TAP_DANCE_FN(caps_a),//                         messing around with capitalization probably not that beneficial honestly, would probably work better with number keys
 	[TD_SAVE] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, LCTL(KC_S)),//     double tap left control to save
 	[TD_PRNT] = ACTION_TAP_DANCE_DOUBLE(KC_APP, LCTL(KC_P)),//      double tap menu to print
 	[TD_ONE] = ACTION_TAP_DANCE_FN(exclaim),//                      one tap is 1, two taps is exclemation point, three is F1.
+	[TD_TWO] = ACTION_TAP_DANCE_FN(tweet),
+	[TD_THREE] = ACTION_TAP_DANCE_FN(hashtag),
+	[TD_FOUR] = ACTION_TAP_DANCE_FN(money),
+	[TD_FIVE] = ACTION_TAP_DANCE_FN(percent),
+	[TD_SIX] = ACTION_TAP_DANCE_FN(exponent),
+	[TD_SEV] = ACTION_TAP_DANCE_FN(ampersand),
+	[TD_EGHT] = ACTION_TAP_DANCE_FN(asterisk),
+	[TD_NINE] = ACTION_TAP_DANCE_FN(parento),
+	[TD_ZERO] = ACTION_TAP_DANCE_FN(parentc),
 };
 
 
